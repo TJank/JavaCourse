@@ -3,25 +3,16 @@ package com.tylerJankowski;
 public class Main {
 
     public static void main(String[] args) {
-	    int switchValue = 7;
+        System.out.println(isLeapYear(-1600));
+        System.out.println(isLeapYear(1600));
+        System.out.println(isLeapYear(2017));
+        System.out.println(isLeapYear(2000));
 
-	    switch(switchValue) {
-            case 1:
-                System.out.println("Value was 1.");
-                break;
+        System.out.println(getDaysInMonth(1,2020));
+        System.out.println(getDaysInMonth(2,2020));
+        System.out.println(getDaysInMonth(2,2018));
 
-            case 2:
-                System.out.println("Value was 2.");
-                break;
-            case 3: case 4: case 5:
-                System.out.println("was a 3, or a 4, or a 5.");
-                System.out.println("Actually it was a " + switchValue);
-                break;
 
-            default:
-                System.out.println("Was not 1, 2, 3, 4, or 5.");
-                break;
-	    }
 
 	    char value = 'E';
 
@@ -66,9 +57,9 @@ public class Main {
                 System.out.println("Not Sure");
         }
 
-        printDayOfTheWeek(5);
-	    printDayOfTheWeek(0);
-	    printDayOfTheWeek(3);
+//        printDayOfTheWeek(5);
+//	    printDayOfTheWeek(0);
+//	    printDayOfTheWeek(3);
 
     }
 
@@ -157,8 +148,71 @@ public class Main {
         if((year < 1) || (year > 9999)) {
             return false;
         }
+        else if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)){
+            return true;
+        } else {
+            return false;
+        }
 
     }
+
+    public static int getDaysInMonth(int month, int year) {
+        if ((month < 1) || (month > 12)) {
+            return -1;
+        }
+        if ((year < 1) || (year > 9999)) {
+            return -1;
+        }
+
+        boolean isLeapYear = isLeapYear(year);
+
+        switch (month) {
+            case 1:
+                return 31;
+
+
+            case 2:
+                if(isLeapYear) {
+                    return 29;
+                } else {
+                    return 28;
+                }
+
+            case 3:
+                return 31;
+            case 4:
+                return 30;
+
+            case 5:
+                return 31;
+
+            case 6:
+                return 30;
+
+            case 7:
+                return 31;
+
+            case 8:
+                return 31;
+
+            case 9:
+                return 30;
+
+            case 10:
+                return 31;
+
+            case 11:
+                return 30;
+
+            case 12:
+                return 31;
+
+            default:
+                return -1;
+        }
+
+    }
+
 }
 
 
