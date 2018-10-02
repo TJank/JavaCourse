@@ -12,6 +12,7 @@ public class Main {
 	    hamburger.addHambergerAddition4("Cheese", .50);
         System.out.println("Total burger price is: " + hamburger.itemizeHamburger());
 
+
         HealthyBurger healthyBurger = new HealthyBurger("Bacon", 5.67);
         healthyBurger.addHambergerAddition1("Egg", 5.67);
         healthyBurger.addHealthyAddition1("Lentils", 3.41);
@@ -19,6 +20,10 @@ public class Main {
 
         DeluxeBurger db = new DeluxeBurger();
         System.out.println("Total Deluxe Burger price is " + db.itemizeHamburger());
+
+		HealthyBurger healthyBurger = new HealthyBurger("Bacon", 5.67);
+		healthyBurger.itemizeHamburger();
+
 
     }
 }

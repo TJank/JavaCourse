@@ -1,15 +1,15 @@
 package com.tylerJankowski;
 
-public class HealthyBurger extends Hamburger{
 
+public class HealthyBurger extends Hamburger {
     private String healthyExtra1Name;
     private double healthyExtra1Price;
 
     private String healthyExtra2Name;
     private double healthyExtra2Price;
 
-    public HealthyBurger(String meat, double price) {
-        super("Healthy", meat, "Brown rye", price);
+    public HealthyBurger(String meat,double price) {
+        super("Healthy", meat, "Brow rye", price);
     }
 
     public void addHealthyAddition1(String name, double price) {
@@ -21,6 +21,8 @@ public class HealthyBurger extends Hamburger{
         this.healthyExtra2Name = name;
         this.healthyExtra2Price = price;
     }
+
+
 
     @Override
     public double itemizeHamburger() {
