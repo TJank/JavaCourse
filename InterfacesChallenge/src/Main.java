@@ -16,6 +16,12 @@ public class Main {
         System.out.println(tim);
 
 
+        ISaveable werewolf = new Monster("Wereworlf", 20, 40);
+        ((Monster) werewolf).getStrength(); // because declared as an interface and initialized as a monster class
+        System.out.println(werewolf);
+        saveObject(werewolf);
+
+
     }
 
     public static ArrayList<String> readValues() {
